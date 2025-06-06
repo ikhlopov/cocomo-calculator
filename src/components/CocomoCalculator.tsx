@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useCallback } from 'react';
 import {
   Box,
   Container,
@@ -44,11 +44,7 @@ const CocomoCalculator: React.FC = () => {
     staff: number;
   } | null>(null);
 
-  useEffect(() => {
-    handleCalculate();
-  }, [kloc, mode, version, costDrivers]);
-
-  const handleCalculate = () => {
+  const handleCalculate = useCallback(() => {
     if (kloc) {
       const calculatedResult = calculateCocomo(
         Number(kloc),
@@ -58,17 +54,11 @@ const CocomoCalculator: React.FC = () => {
       );
       setResult(calculatedResult);
     }
-  };
+  }, [kloc, mode, version, costDrivers]);
 
-  const handleCostDriverChange = (name: keyof typeof costDrivers) => (
-    event: React.ChangeEvent<HTMLInputElement>
-  ) => {
-    setCostDrivers({
-      ...costDrivers,
-      [name]: Number(event.target.value),
-    });
-  };
-
+  useEffect(() => {
+    handleCalculate();
+  }, [handleCalculate]);
 
   return (
     <Container maxWidth="md">
