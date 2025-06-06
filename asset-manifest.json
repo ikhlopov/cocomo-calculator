@@ -1,0 +1,10 @@
+{
+  "files": {
+    "main.js": "/cocomo-calculator/static/js/main.d503cdc9.js",
+    "index.html": "/cocomo-calculator/index.html",
+    "main.d503cdc9.js.map": "/cocomo-calculator/static/js/main.d503cdc9.js.map"
+  },
+  "entrypoints": [
+    "static/js/main.d503cdc9.js"
+  ]
+}
