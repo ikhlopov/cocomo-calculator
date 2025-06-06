@@ -12,6 +12,7 @@ import {
   ToggleButtonGroup,
   ToggleButton,
 } from '@mui/material';
+import CalculateIcon from '@mui/icons-material/Calculate';
 import { ProjectMode, CocomoVersion } from '../types/cocomo';
 import { calculateCocomo } from '../utils/cocomo';
 import { costDriverCategories, costDriverLabels, costDriverRatings } from '../types/CostDrivers';
@@ -63,7 +64,8 @@ const CocomoCalculator: React.FC = () => {
   return (
     <Container maxWidth="md">
       <Box sx={{ my: 4 }}>
-        <Typography variant="h4" component="h1" gutterBottom align="center">
+        <Typography variant="h4" component="h1" gutterBottom align="center" sx={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 1 }}>
+          <CalculateIcon fontSize="large" color="primary" />
           Калькулятор COCOMO
         </Typography>
         
